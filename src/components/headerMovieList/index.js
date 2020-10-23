@@ -1,5 +1,4 @@
 import React from "react";
-import MoviesHeader from "../src/components/headerMovieList";
 
 const Header = ({ numMovies }) => {
   return (
@@ -13,8 +12,4 @@ const Header = ({ numMovies }) => {
     </div>
   );
 };
-
 export default Header;
-storiesOf("Home Page/Header", module).add("default", () => (
-    <MoviesHeader numMovies={10} />
-  ));
