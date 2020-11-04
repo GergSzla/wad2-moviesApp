@@ -78,4 +78,17 @@ describe("Home Page ", () => {
               });      
             });
         });
+        describe("By movie genre and text", () => {
+            it("should display movies with the specified genre only", () => {
+                const searchString = "Hard Kill";
+                const selectedGenreId = 35;
+                const selectedGenreText = "Comedy";
+                var matchingMovies = filterByGenre(movies, selectedGenreId);
+                cy.get("select").select(selectedGenreText); 
+                cy.get(".card").should("have.length", matchingMovies.length); 
+                matchingMovies = filterByTitle(movies, searchString);
+                cy.get("input").clear().type(searchString);
+                cy.get(".card").should("have.length", matchingMovies.length);
+            });
+        });
     })
