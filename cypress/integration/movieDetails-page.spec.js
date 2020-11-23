@@ -47,11 +47,21 @@ describe("Movie Details Page", () => {
         cy.get("li").eq(2).contains("Release Date");
         cy.get("li").eq(3).contains(movie.release_date);
       });
-  });
-  it("should display the Home icon with the correct URL value", () => {
-    cy.get(".fa-home")
+
+      
+});
+    it("should display the Home icon with the correct URL value", () => {
+     cy.get(".fa-home")
       .parent()
       .should("have.attr", "href")
       .should("include", movie.homepage);
   });
+
+  it("should display movie poster", () => {
+    cy.get("div")
+     .find('img')
+     .should("have.attr", "src")
+     .should("include", movie.poster_path);
+ });
+  
 });
