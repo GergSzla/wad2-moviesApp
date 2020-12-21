@@ -1,38 +1,56 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "./app.css"
 import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"    // CHANGED
-import FavoriteMoviesPage from './pages/favoritesMoviesPage'       
-import UpcomingMoviesPage from './pages/upcomingMoviesPage'  // NEW
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"
+import FavoriteMoviesPage from './pages/favoritesMoviesPage'
+import UpcomingMoviesPage from './pages/upcomingMoviesPage'
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
+import AuthContextProvider from "./contexts/authenticationContext";
+
 import AddMovieReviewPage from './pages/addMovieReviewPage'
+import PrivRoute from './pages/privRoute';
+
+
+import LoginPage from './pages/loginPage'
+
+
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
+
       <div className="jumbotron">
-        <SiteHeader /> 
         <div className="container-fluid">
-          <MoviesContextProvider>
-            <GenresContextProvider>    {/* NEW */}
-            <Switch>
-        <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-          <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-          /<Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
-          <Route path="/reviews/:id" component={MovieReviewPage} />
-          <Route path="/movies/:id" component={MoviePage} />
-          <Route path="/" component={HomePage} />
-          <Redirect from="*" to="/" />
-        </Switch>
-            </GenresContextProvider>    {/* NEW */}
-          </MoviesContextProvider>
+        <div className = "page">
+
+          <AuthContextProvider>
+            <SiteHeader />
+            <MoviesContextProvider>
+              <GenresContextProvider>
+                <Switch>
+                  <PrivRoute exact path="/reviews/form" component={AddMovieReviewPage} />
+                  <PrivRoute exact path="/movies/favorites" component={FavoriteMoviesPage} />
+                  <PrivRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
+                  <Route path="/login" component={LoginPage} />
+                  <PrivRoute path="/reviews/:id" component={MovieReviewPage} />
+                  <PrivRoute path="/movies/:id" component={MoviePage} />
+                  <PrivRoute path="/" component={HomePage} />
+                  <Redirect from="*" to="/" />
+                </Switch>
+              </GenresContextProvider>
+            </MoviesContextProvider>
+          </AuthContextProvider>
+          </div>
+
         </div>
       </div>
+
     </BrowserRouter>
   );
 };
