@@ -1,13 +1,13 @@
 import React from "react";
-import "./headerTvList.css";
+import "./headerPersonList.css";
 
-const Header = ({ title, numTvs }) => {
+const Header = ({ title, numPersons }) => {
     return (
         <div className="row">
             <div>
                 <h2 className="pageTitle">
                     {`${title} `}
-                    <span className="page">{numTvs}</span>
+                    <span className="page">{numPersons}</span>
                 </h2>
             </div>
         </div>
