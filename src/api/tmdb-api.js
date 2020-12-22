@@ -75,4 +75,13 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
+  export const getTrendingMovies = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_TMDB_KEY}`
+       )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
+
+
   
