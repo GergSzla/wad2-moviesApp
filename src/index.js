@@ -11,6 +11,8 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"
 import FavoriteMoviesPage from './pages/favoritesMoviesPage'
 import UpcomingMoviesPage from './pages/upcomingMoviesPage'
 import TrendingMoviesPage from './pages/trendingMoviesPage'
+import TrendingTvsPage from './pages/trendingTvPage'
+
 
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
@@ -51,6 +53,7 @@ const App = () => {
                         <PrivRoute exact path="/movies/favorites" component={FavoriteMoviesPage} />
                         <PrivRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
                         <PrivRoute exact path="/movies/trending" component={TrendingMoviesPage} />
+                        <PrivRoute exact path="/tv/trending" component={TrendingTvsPage} />
                         <PrivRoute exact path="/person/trending" component={PersonsPage} />
                         <PrivRoute path="/person/trending/:id" component={PersonPage} />
                         <PrivRoute path="/tv/:id" component={TvPage} />

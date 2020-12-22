@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import StubAPI from "../api/stubAPI";
 import PageTemplate from '../components/templateMovieListPage'
 
-const UpcomingMoviesPage = () => {
+const TrendingMoviesPage = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     getTrendingMovies().then(movies => {
@@ -30,4 +30,4 @@ const UpcomingMoviesPage = () => {
   );
 };
 
-export default UpcomingMoviesPage;
+export default TrendingMoviesPage;
