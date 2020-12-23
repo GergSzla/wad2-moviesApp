@@ -18,3 +18,15 @@
   .card-title {
   text-align: center
   }
+
+  .displayGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2%;
+  }
+  
+  .gridItem {
+    display: inline;
+    height: 100px;
+    width: 1000px;
+  }

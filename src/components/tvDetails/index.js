@@ -1,4 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 import "./tvDetails.css";
 import { Dropdown } from 'semantic-ui-react'
 
@@ -61,26 +65,54 @@ export default ({ tv }) => {
             </ul>
 
 
+            <div className="displayGrid">
             {tv.seasons.map(s => (
-                <table>
-                    <tr>
-                        <th>Season No.</th>
-                        <th>Name</th>
-                        <th>Ep. Count</th>
-                        <th>Air Date</th>
+                <div className="card  bg-white">
+                <Link to={`/tv/${tv.id}/season/${s.id}`}>
+                  <img
+                    className="card-img-tag center "
+                    alt={s.name}
+                    src={
+                        s.poster_path
+                        ? `https://image.tmdb.org/t/p/w500/${s.poster_path}`
+                        : "./film-poster-placeholder.png"
+                    }
+                  />
+                  </Link>
+                  <div className="card-body">
+                    <h4 className="card-title ">{s.name}</h4>
+                    <p>
+                      <FontAwesomeIcon icon={["fas", "calendar"]} />
+                      <span> {s.air_date}</span>
+                    </p>
+                    <p>
+                      <FontAwesomeIcon icon={["fas", "clone"]} />
+                      <span> {s.episode_count}</span>
+                    </p>
+                  </div>
+                  <div className="card-footer">
+                     {/* {action(movie)} */}
+                  </div>
+              </div>
+                // <table>
+                //     <tr>
+                //         <th>Season No.</th>
+                //         <th>Name</th>
+                //         <th>Ep. Count</th>
+                //         <th>Air Date</th>
 
-                    </tr>
-                    <tr>
-                        <td>{s.season_number}</td>
-                        <td>{s.name}</td>
-                        <td>{s.episode_count}</td>
-                        <td>{s.air_date}</td>
+                //     </tr>
+                //     <tr>
+                //         <td>{s.season_number}</td>
+                //         <td>{s.name}</td>
+                //         <td>{s.episode_count}</td>
+                //         <td>{s.air_date}</td>
 
-                    </tr>
+                //     </tr>
 
-                </table>
+                // </table>
             ))}
-
+    </div>
         </>
     );
 };
