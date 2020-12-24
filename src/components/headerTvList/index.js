@@ -1,7 +1,7 @@
 import React from "react";
 import "./headerTvList.css";
 
-const Header = ({ title, numTvs }) => {
+const Headerr = ({ title, numTvs }) => {
     return (
         <div className="row">
             <div>
@@ -14,4 +14,4 @@ const Header = ({ title, numTvs }) => {
     );
 };
 
-export default Header;
+export default Headerr;

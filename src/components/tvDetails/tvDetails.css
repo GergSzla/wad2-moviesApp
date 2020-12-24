@@ -30,3 +30,9 @@
     height: 100px;
     width: 1000px;
   }
+  
+  .modal {
+    
+    height: 200px;
+    position: relative;
+  }

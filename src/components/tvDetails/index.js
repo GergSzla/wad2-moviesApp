@@ -1,39 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-
+import { Button, Header, Image, Modal } from 'semantic-ui-react'
+import { getSeason } from '../../api/tmdb-api'
+import ReactDOM from "react-dom";
+import "semantic-ui-css/semantic.min.css";
 import "./tvDetails.css";
-import { Dropdown } from 'semantic-ui-react'
 
-const options = [
-    { key: 'angular', text: 'Angular', value: 'angular' },
-    { key: 'css', text: 'CSS', value: 'css' },
-    { key: 'design', text: 'Graphic Design', value: 'design' },
-    { key: 'ember', text: 'Ember', value: 'ember' },
-    { key: 'html', text: 'HTML', value: 'html' },
-    { key: 'ia', text: 'Information Architecture', value: 'ia' },
-    { key: 'javascript', text: 'Javascript', value: 'javascript' },
-    { key: 'mech', text: 'Mechanical Engineering', value: 'mech' },
-    { key: 'meteor', text: 'Meteor', value: 'meteor' },
-    { key: 'node', text: 'NodeJS', value: 'node' },
-    { key: 'plumbing', text: 'Plumbing', value: 'plumbing' },
-    { key: 'python', text: 'Python', value: 'python' },
-    { key: 'rails', text: 'Rails', value: 'rails' },
-    { key: 'react', text: 'React', value: 'react' },
-    { key: 'repair', text: 'Kitchen Repair', value: 'repair' },
-    { key: 'ruby', text: 'Ruby', value: 'ruby' },
-    { key: 'ui', text: 'UI Design', value: 'ui' },
-    { key: 'ux', text: 'User Experience', value: 'ux' },
-]
-
-const DropdownExampleMultipleSelection = () => (
-    <Dropdown placeholder='Skills' fluid multiple selection options={options} />
-)
 
 export default ({ tv }) => {
+    const [open, setOpen] = React.useState(false)
+    
     return (
         <>
+
             <h3 className="col-2 overview">Overview</h3>
             <p>{tv.overview}</p>
 
@@ -64,55 +44,75 @@ export default ({ tv }) => {
                 </li>
             </ul>
 
-
+            {/* https://stackoverflow.com/questions/60559623/printing-attributes-of-an-object-array-as-a-grid-in-reactjs */}
             <div className="displayGrid">
-            {tv.seasons.map(s => (
-                <div className="card  bg-white">
-                <Link to={`/tv/${tv.id}/season/${s.id}`}>
-                  <img
-                    className="card-img-tag center "
-                    alt={s.name}
-                    src={
-                        s.poster_path
-                        ? `https://image.tmdb.org/t/p/w500/${s.poster_path}`
-                        : "./film-poster-placeholder.png"
-                    }
-                  />
-                  </Link>
-                  <div className="card-body">
-                    <h4 className="card-title ">{s.name}</h4>
-                    <p>
-                      <FontAwesomeIcon icon={["fas", "calendar"]} />
-                      <span> {s.air_date}</span>
-                    </p>
-                    <p>
-                      <FontAwesomeIcon icon={["fas", "clone"]} />
-                      <span> {s.episode_count}</span>
-                    </p>
-                  </div>
-                  <div className="card-footer">
-                     {/* {action(movie)} */}
-                  </div>
-              </div>
-                // <table>
-                //     <tr>
-                //         <th>Season No.</th>
-                //         <th>Name</th>
-                //         <th>Ep. Count</th>
-                //         <th>Air Date</th>
+                {tv.seasons.map(s => (
+                    <div className="card  bg-white">
+                        <Link to={`/tv/${tv.id}/season/${s.id}`}>
+                            <img
+                                className="card-img-tag center "
+                                alt={s.name}
+                                src={
+                                    s.poster_path
+                                        ? `https://image.tmdb.org/t/p/w500/${s.poster_path}`
+                                        : "./film-poster-placeholder.png"
+                                }
+                            />
+                        </Link>
+                        <div className="card-body">
+                            <h4 className="card-title ">{s.name}</h4>
+                            <p>
+                                <FontAwesomeIcon icon={["fas", "calendar"]} />
+                                <span> {s.air_date}</span>
+                            </p>
+                            <p>
+                                <FontAwesomeIcon icon={["fas", "clone"]} />
+                                <span> {s.episode_count}</span>
+                            </p>
+                        </div>
+                        <Modal
+                            style={{
+                                position: "fixed",
+                                top: "50%",
+                                left: "50%",
+                                transform: "translate(-50%, -50%)",
+                            }}
+                            onClose={() => setOpen(false)}
+                            onOpen={() => setOpen(true)}
+                            open={open}
 
-                //     </tr>
-                //     <tr>
-                //         <td>{s.season_number}</td>
-                //         <td>{s.name}</td>
-                //         <td>{s.episode_count}</td>
-                //         <td>{s.air_date}</td>
+                            trigger={
+                                <Link to={`/tv/${tv.id}/season/${s.id}/episodes/`}>
+                                    <Button onClick={() => getSeason(tv.id, s.id)}>Show Modal</Button>
+                                </Link>
+                            }
+                        >
+                            <Modal.Header>{s.name}</Modal.Header>
+                            <Modal.Content>
 
-                //     </tr>
+                            </Modal.Content>
+                            <Modal.Actions>
+                                <Button color='black' onClick={() => setOpen(false)}>
+                                    Nope
+                                </Button>
+                                <Button
+                                    content="Yep, that's me"
+                                    labelPosition='right'
+                                    icon='checkmark'
+                                    onClick={() => setOpen(false)}
+                                    positive
+                                />
+                            </Modal.Actions>
+                        </Modal>
+                    </div>
 
-                // </table>
-            ))}
-    </div>
+                ))}
+
+
+            </div>
+
         </>
+
     );
+
 };
