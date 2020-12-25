@@ -43,7 +43,7 @@ const SiteHeader = () => {
         <NavDropdown.Item><Link className="text-dark" to="/persons/following"> Actors</Link></NavDropdown.Item>
       </NavDropdown>
       <Nav.Item><Link id = "login" className="nav-link text-dark" to="/login">Register</Link></Nav.Item>
-    {/* <Nav.Item ><Link className="nav-link text-dark" to="/"> Account</Link></Nav.Item> */}
+    <Nav.Item ><Link className="nav-link text-dark" to="/account"> Account</Link></Nav.Item>
   </Nav>
   </Navbar.Collapse>
 </Navbar>

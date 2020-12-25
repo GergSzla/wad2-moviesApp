@@ -13,6 +13,11 @@ const AuthContextProvider = (props) => {
     const [loading, setLoading] = useState(true)
     const [isLoggedIn, setLoggedIn] = useState(false)
 
+    function logOut() {
+        setLoggedIn(false)
+        return auth.signOut()
+    }
+    
     function signUp(email, password) {
         var user_email = email
         //save user to DB (users/example@gmail.com/...) and AUTH
@@ -43,7 +48,9 @@ const AuthContextProvider = (props) => {
         isLoggedIn,
         setLoggedIn,
         signUp,
-        login
+        login,
+        logOut,
+
     }
 
 

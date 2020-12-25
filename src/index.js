@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"
 import FavoriteMoviesPage from './pages/favoritesMoviesPage'
 import FavoriteTvsPage from './pages/favoritesTvsPage'
 import FollowingPersonsPage from './pages/followingPersonsPage'
+import UserProfPage from './pages/userProfile'
 
 
 import UpcomingMoviesPage from './pages/upcomingMoviesPage'
@@ -60,6 +61,7 @@ const App = () => {
                         <PrivRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
                         <PrivRoute exact path="/movies/trending" component={TrendingMoviesPage} />
                         <PrivRoute exact path="/tv/trending" component={TrendingTvsPage} />
+                        <PrivRoute exact path="/account" component={UserProfPage} />
                         <PrivRoute exact path="/person/trending" component={PersonsPage} />
                         <PrivRoute path="/person/trending/:id" component={PersonPage} />
                         <PrivRoute path="/tv/:id" component={TvPage} />
