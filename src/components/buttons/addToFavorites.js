@@ -19,4 +19,5 @@ const AddToFavoriteButton = ({ movie }) => {
   );
 };
 
+
 export default AddToFavoriteButton;

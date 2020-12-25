@@ -34,7 +34,7 @@ const TvCard = ({ tv, action }) => {
                             <span> {tv.vote_average}</span>
                         </p>
                     </div>
-                    {/* {action(tv)} */}
+                    {action(tv)}
 
                 </div>
             </div>
