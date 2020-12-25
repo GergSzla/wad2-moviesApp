@@ -22,8 +22,6 @@ const PersonCard = ({person, action}) => {
         <div class="text-block">
         <h4 className="card-title">{person.name}</h4>
         </div>
-        {action(person)}
-
       </div>
    </div>
   );
