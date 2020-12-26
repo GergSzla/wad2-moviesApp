@@ -48,7 +48,7 @@ export default ({ tv }) => {
             <div className="displayGrid">
                 {tv.seasons.map(s => (
                     <div className="card  bg-white">
-                        <Link to={`/tv/${tv.id}/season/${s.id}`}>
+                        <Link to={`/tv/${tv.id}/season/${s.season_number}`}>
                             <img
                                 className="card-img-tag center "
                                 alt={s.name}
@@ -70,40 +70,6 @@ export default ({ tv }) => {
                                 <span> {s.episode_count}</span>
                             </p>
                         </div>
-                        <Modal
-                            style={{
-                                position: "fixed",
-                                top: "50%",
-                                left: "50%",
-                                transform: "translate(-50%, -50%)",
-                            }}
-                            onClose={() => setOpen(false)}
-                            onOpen={() => setOpen(true)}
-                            open={open}
-
-                            trigger={
-                                <Link to={`/tv/${tv.id}/season/${s.id}/episodes/`}>
-                                    <Button onClick={() => getSeason(tv.id, s.id)}>Show Modal</Button>
-                                </Link>
-                            }
-                        >
-                            <Modal.Header>{s.name}</Modal.Header>
-                            <Modal.Content>
-
-                            </Modal.Content>
-                            <Modal.Actions>
-                                <Button color='black' onClick={() => setOpen(false)}>
-                                    Nope
-                                </Button>
-                                <Button
-                                    content="Yep, that's me"
-                                    labelPosition='right'
-                                    icon='checkmark'
-                                    onClick={() => setOpen(false)}
-                                    positive
-                                />
-                            </Modal.Actions>
-                        </Modal>
                     </div>
 
                 ))}

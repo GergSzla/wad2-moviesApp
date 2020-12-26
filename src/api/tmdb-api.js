@@ -91,10 +91,9 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getSeason = (tv_id,s_no) => {
+  export const getSeason = (tv_id,season_number) => {
     return fetch(
-      `https://api.themoviedb.org/3/tv/${tv_id}/season/${s_no}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/tv/${tv_id}/season/${season_number}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
        )
       .then(res => res.json())
-      .then(json => json.results);
   };

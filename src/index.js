@@ -30,7 +30,7 @@ import PersonsContextProvider from "./contexts/personContext";
 import AuthContextProvider from "./contexts/authenticationContext";
 import TvsPage from './pages/tvPage'
 import PersonsPage from './pages/personPage'
-
+import SeasonPage from './pages/seasonPage'
 
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import PrivRoute from './pages/privRoute';
@@ -65,6 +65,7 @@ const App = () => {
                         <PrivRoute exact path="/account" component={UserProfPage} />
                         <PrivRoute exact path="/person/trending" component={PersonsPage} />
                         <PrivRoute path="/person/trending/:id" component={PersonPage} />
+                        <PrivRoute path="/tv/:tv_id/season/:season_number" component={SeasonPage} />
                         <PrivRoute path="/tv/:id" component={TvPage} />
                         <PrivRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
                         <Route path="/login" component={LoginPage} />
