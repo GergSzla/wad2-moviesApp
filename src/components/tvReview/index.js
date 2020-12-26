@@ -1,12 +1,13 @@
 import React from "react";
 import { Button,Image, Modal, ModalDescription } from 'semantic-ui-react'
+import { Link } from "react-router-dom";
 
 export default ({ review }) => {
-  const [open, setOpen] = React.useState(false)
+    const [open, setOpen] = React.useState(false)
 
-  return (
-    <>
-      <Modal
+    return (
+        <>
+            <Modal
                 style={{
                     top: "50%",
                     left: "50%",
@@ -40,6 +41,6 @@ export default ({ review }) => {
                     />
                 </Modal.Actions>
             </Modal>
-    </>
-  );
+        </>
+    );
 };

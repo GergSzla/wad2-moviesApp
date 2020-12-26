@@ -33,7 +33,7 @@ export default ({ tv }) => {
                   {" "}
                   <Link className="fullReview"
                     to={{
-                      pathname: `/reviews/${r.id}`,
+                      pathname: `/tvs/reviews/${r.id}`,
                       state: {
                         review: r,
                         tv: tv

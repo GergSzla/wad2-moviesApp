@@ -20,6 +20,7 @@ import TrendingTvsPage from './pages/trendingTvPage'
 
 
 import MovieReviewPage from "./pages/movieReviewPage";
+import TvReviewPage from "./pages/tvReviewPage";
 import SiteHeader from './components/siteHeader'
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
@@ -67,7 +68,8 @@ const App = () => {
                         <PrivRoute path="/tv/:id" component={TvPage} />
                         <PrivRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
                         <Route path="/login" component={LoginPage} />
-                        <PrivRoute path="/movie/reviews/:id" component={MovieReviewPage} />
+                        <PrivRoute path="/movies/reviews/:id" component={MovieReviewPage} />
+                        <PrivRoute path="/tvs/reviews/:id" component={TvReviewPage} />
                         <PrivRoute path="/movies/:id" component={MoviePage} />
                         <PrivRoute path="/tv" component={TvsPage} />
                         {/* <PrivRoute path="/tv/reviews/:id" component={TvReviewPage} /> */}
