@@ -1,7 +1,7 @@
 import React from "react";
 import "./movieDetails.css";
 
-export default ({ movie }) => {
+export default ({ movie,action }) => {
   return (
     <>
       <h4>Overview</h4>
@@ -61,6 +61,9 @@ export default ({ movie }) => {
           </li>
         ))}
       </ul>
+
+      {action(movie)}
+
     </>
   );
 };
