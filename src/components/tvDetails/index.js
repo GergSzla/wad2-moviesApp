@@ -8,7 +8,7 @@ import "semantic-ui-css/semantic.min.css";
 import "./tvDetails.css";
 
 
-export default ({ tv }) => {
+export default ({ tv , action}) => {
     const [open, setOpen] = React.useState(false)
     
     return (
@@ -76,6 +76,9 @@ export default ({ tv }) => {
 
 
             </div>
+
+
+            {action(tv)}
 
         </>
 

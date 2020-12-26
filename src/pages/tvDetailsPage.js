@@ -4,45 +4,48 @@ import TvDetails from "../components/tvDetails";
 import PageTemplate from "../components/templateTvPage";
 import TvReviews from "../components/tvReviews";
 import useTv from "../hooks/useTv";
+import AddReviewButton from '../components/buttons/addReview'
 
 const TvPage = props => {
   const { id } = props.match.params;
   const [tv] = useTv(id)
   return (
     <>
-    {tv ? (
-      <>
-        <PageTemplate tv={tv}>
-          <TvDetails tv={tv} />
-        </PageTemplate>
-        <div className="row">
-          <div className="col-12 ">
-            {!props.history.location.pathname.endsWith("/reviews") ? (
-              <Link
-                className="btn btn-primary btn-block active"
-                to={`/tv/${id}/reviews`}
-              >
-                Show Reviews (Extracts)
-              </Link>
-            ) : (
-              <Link
-                className="btn btn-primary btn-block active"
-                to={`/tv/${id}`}
-              >
-                Hide Reviews 
-              </Link>
-            )}
+      {tv ? (
+        <>
+          <PageTemplate tv={tv}>
+            <TvDetails tv={tv}
+              action={movie => <AddReviewButton movie={movie} />}
+            />
+          </PageTemplate>
+          <div className="row">
+            <div className="col-12 ">
+              {!props.history.location.pathname.endsWith("/reviews") ? (
+                <Link
+                  className="btn btn-primary btn-block active"
+                  to={`/tv/${id}/reviews`}
+                >
+                  Show Reviews (Extracts)
+                </Link>
+              ) : (
+                  <Link
+                    className="btn btn-primary btn-block active"
+                    to={`/tv/${id}`}
+                  >
+                    Hide Reviews
+                  </Link>
+                )}
+            </div>
           </div>
-        </div>
-        <Route
-          path={`/tv/:id/reviews`}
-          render={props => <TvReviews tv={tv} {...props} />}
-        />
-      </>
-    ) : (
-      <p>Waiting for tv details</p>
-    )}
-  </>
+          <Route
+            path={`/tv/:id/reviews`}
+            render={props => <TvReviews tv={tv} {...props} />}
+          />
+        </>
+      ) : (
+          <p>Waiting for tv details</p>
+        )}
+    </>
   );
 };
 
