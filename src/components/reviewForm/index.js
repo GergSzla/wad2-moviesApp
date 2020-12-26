@@ -1,8 +1,10 @@
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import "./reviewForm.css";
 import useForm from "react-hook-form";
-import {MoviesContext} from '../../contexts/moviesContext'
+import { MoviesContext } from '../../contexts/moviesContext'
 import { withRouter } from "react-router-dom";
+import { Form, Input, TextArea, Button, Select } from 'semantic-ui-react'
+
 
 const ReviewForm = ({ movie, history }) => {
   const { register, handleSubmit, errors, reset } = useForm();
@@ -14,53 +16,46 @@ const ReviewForm = ({ movie, history }) => {
   };
 
   return (
-    <form className="form bg-dark text-light" onSubmit={handleSubmit(onSubmit)}>
-      <h3>Add your review</h3>
-      <div className="form-group">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Author"
-          defaultValue={movie.review ? movie.review.author : ""}
-          name="author"
-          ref={register({ required: "Author name required" })}
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form.Group widths='equal'>
+        <Form.Field
+          id='form-input-control-first-name'
+          control={Input}
+          label='First name'
+          placeholder='First name'
         />
-      </div>
-      {errors.author && <p className=" text-white">{errors.author.message} </p>}
-      <div className="form-group">
-        <textarea
-          rows="10"
-          type="text"
-          className="form-control"
-          placeholder="Write your review"
-          defaultValue={movie.review ? movie.review.content : ""}
-          name="content"
-          ref={register({
-            required: "No review text",
-            minLength: { value: 10, message: "Review is too short" }
-          })}
+        <Form.Field
+          id='form-input-control-last-name'
+          control={Input}
+          label='Last name'
+          placeholder='Last name'
         />
-      </div>
-      {errors.content && (
-        <p className="text-white">{errors.content.message} </p>
-      )}
+      </Form.Group>
+      <Form.Field
+        id='form-textarea-control-opinion'
+        control={TextArea}
+        label='Review'
+        placeholder='Review'
 
-      <button type="submit" className="btn btn-primary">
-        Submit
-      </button>
-      <button
-        type="reset"
-        className="btn btn-primary reset"
-        onClick={() => {
-          reset({
-            author: "",
-            content: ""
-          });
-        }}
-      >
-        Reset
-      </button>
-    </form>
+      />
+      <Form.Field
+        id='form-input-control-error-email'
+        control={Input}
+        label='Email'
+        placeholder='example@gmail.com'
+      />
+      <Form.Checkbox label='I agree to the Terms and Conditions' error />
+
+      <Form.Group widths='equal'>
+      <Form.Field
+        id='form-button-control-public'
+        control={Button}
+        content='Submit'
+        type = "submit"
+      />
+      
+      </Form.Group>
+    </Form>
   );
 };
 

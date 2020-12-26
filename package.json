@@ -19,6 +19,7 @@
     "react-scripts": "3.4.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1",
+    "semantic-ui-react-numberpicker": "0.0.1-b",
     "yarn": "^1.22.10"
   },
   "scripts": {

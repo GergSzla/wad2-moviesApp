@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Header, Image, Modal } from 'semantic-ui-react'
-import { getSeason } from '../../api/tmdb-api'
-import ReactDOM from "react-dom";
 import "semantic-ui-css/semantic.min.css";
 import "./tvDetails.css";
 
