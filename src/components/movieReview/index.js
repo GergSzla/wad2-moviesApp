@@ -20,10 +20,9 @@ export default ({ review }) => {
                 trigger={
                     <Button>Show Review</Button>
                 }>
-                <Modal.Header>{review.author}</Modal.Header>
+                <Modal.Header>Review By: <b>{review.author}</b></Modal.Header>
                 <Modal.Content scrolling>
                     <ModalDescription>
-                        <p>Review By: {review.author} </p>
                         <p>{review.content} </p>
                     </ModalDescription>
                 </Modal.Content>

@@ -1,21 +1,40 @@
 import React from "react";
 import "./personDetails.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export default ({ person }) => {
   return (
     <>
-      <h2 className="pName">{person.name}</h2>
-      <h3 className="col-2 bio">Biography</h3>
-      <p>{person.biography}</p>
+      <div className="backg">
+        <h2>
+          {person.name}
+          {"  "}
+          <a href={person.homepage}>
+            <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
+          </a>
+        </h2>
+        <div className="row"><h4 className="badge badge-dark">Also Known As</h4>
+        <p>{person.also_known_as},&nbsp; </p></div>
 
-      <ul className="list-group list-group-horizontal">
-        <li key="ruh" className="list-group-item list-group-item-dark">
-          Birthday
-        </li>
-        <li key="bday" className="list-group-item ">
-          {person.birthday}
-        </li>
-      </ul>
+        <h1 className="badge badge-dark">Biography</h1>
+        <p>{person.biography}</p>
+
+        <div className="row"><h4 className="badge badge-dark">Birthday</h4>
+        <p>{person.birthday}</p></div>
+
+        <div className="row"><h4 className="badge badge-dark">Gender</h4>
+        <p>{person.gender}</p></div>
+
+        <div className="row"><h4 className="badge badge-dark">Popularity</h4>
+        <p>{person.popularity}</p></div>
+
+        <div className="row"><h4 className="badge badge-dark">Place Of Birth</h4>
+        <p>{person.place_of_birth}</p></div>
+
+
+
+      </div>
     </>
   );
 };

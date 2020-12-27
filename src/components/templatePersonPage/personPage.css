@@ -1,0 +1,7 @@
+img.person {
+    float: left;
+    width: 75%;
+    height: 35em;
+    border-radius: 5%;
+    margin-left: 15%;
+  }

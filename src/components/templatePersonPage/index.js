@@ -22,13 +22,6 @@ const TemplatePersonPage = ({ person, children }) => {
                         />
                     </div>
                     <div className=" mTitle col-8">
-                        <h1 className="PName">
-                            {person.name}
-                            {"  "}
-                            <a href={person.homepage}>
-                                <FontAwesomeIcon className="homeIcon" icon={["fas", "home"]} size="1x" />
-                            </a>
-                        </h1>
                         {children}
                     </div>
                 </div>
