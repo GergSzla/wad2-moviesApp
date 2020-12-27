@@ -10,6 +10,13 @@ margin-top: 1px;
 margin-bottom: 1px;
 }
 
+.card{
+  background-color: rgb(26, 26, 26);
+  color: white;
+  margin-top: 40px;
+  padding: 10px;
+}
+
 .card-body {
 padding-top: 1px;
 padding-bottom: 1px;

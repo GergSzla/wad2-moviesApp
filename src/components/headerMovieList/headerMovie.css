@@ -1,0 +1,19 @@
+.pageTitleBackg{
+    font-weight: 700;
+    border-radius: 14px;
+    padding: 6px;
+    margin: 40px;
+    color: white;
+    background-color: #1d1d1d;
+}
+
+.pageTitle{
+    font-size: 250%;
+    top: 50%;
+    left: 50%;
+}
+
+.badge{
+    background-color: rgb(255, 174, 0);
+}
+

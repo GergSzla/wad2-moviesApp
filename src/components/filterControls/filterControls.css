@@ -1,14 +1,43 @@
+h4 {
+  padding-top: 5px;
+}
+span {
+  margin-right: 20px;
+}
 
-    filterControls.css
+input {
+  margin-right: 100px;
+  color: white;
+  padding-left: 10px;
+  background-color:#333333 ;
+  border-style: none;
+  border-radius: 4px;
+  font-size: 30px;
+  border-color: black;
 
-    h4 {
-      padding-top: 5px;
-    }
-    span {
-      margin-right: 10px;
-    }
-    
-    input {
-      margin-right: 100px;
-    }
-    
+}
+
+.row{
+  margin-top: 10px;
+  padding-left: 10px
+}
+
+::placeholder { 
+  color: white;
+  opacity: 1; 
+}
+.searchBar{
+  background-color: rgb(255, 174, 0);
+  padding: 4px;
+}
+
+select{
+  margin-left: 100px;
+  text-align: center;
+  color: white;
+  background-color:#333333 ;
+  border-radius: 4px ;
+  border-color: black;
+}
+
+

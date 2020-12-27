@@ -1,13 +1,14 @@
 import React from "react";
+import "./headerMovie.css";
 
 const Header = ({ title, numMovies }) => {
   return (
-    <div className="row">
-      <div className="col-md-6 offset-4">
-        <h2>
+    <div className="row pageTitleBackg">
+      <div className="col-md-6">
+        <h1 className = "pageTitle">
           {`${title}  `}
-          <span className="badge badge-pill badge-success">{numMovies}</span>
-        </h2>
+          <span className="badge badge-dark">{numMovies}</span>
+        </h1>
       </div>
     </div>
   );

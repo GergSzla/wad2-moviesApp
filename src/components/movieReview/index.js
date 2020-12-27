@@ -18,7 +18,7 @@ export default ({ review }) => {
                 open={open}
 
                 trigger={
-                    <Button>Show Modal</Button>
+                    <Button>Show Review</Button>
                 }>
                 <Modal.Header>{review.author}</Modal.Header>
                 <Modal.Content scrolling>
@@ -28,11 +28,8 @@ export default ({ review }) => {
                     </ModalDescription>
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button color='black' onClick={() => setOpen(false)}>
-                        Nope
-                                </Button>
                     <Button
-                        content="Yep, that's me"
+                        content="Close"
                         labelPosition='right'
                         icon='checkmark'
                         onClick={() => setOpen(false)}

@@ -81,7 +81,7 @@ const LogReg = () => {
                                     </Form.Group>
 
                                     <Button disabled={loading} className="btnLogin" type="submit" > Login</Button>
-                                    <Button className="btnGAuth"><img src="../../../public/gimage.png" /></Button>
+                                    {/* <Button className="btnGAuth"><img src="../../../public/gimage.png" /></Button> */}
                                 </Form>
                             </div>
                             {/* Sign Up */}
