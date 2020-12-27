@@ -15,7 +15,7 @@ const TvPage = props => {
         <>
           <PageTemplate tv={tv}>
             <TvDetails tv={tv}
-              action={movie => <AddReviewButton movie={movie} />}
+              action={tv => <AddReviewButton tv={tv} />}
             />
           </PageTemplate>
           <div className="row">

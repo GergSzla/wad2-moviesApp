@@ -8,7 +8,7 @@ const SeasonHeader = ({ history }) => {
         <div className="row">
             <div className="col-2">
                 <button onClick={() => history.goBack()}>
-                    <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="2x" color="#009dff" />
+                    <FontAwesomeIcon icon={["fas", "chevron-circle-left"]} size="2x" color="#ffae00" />
                 </button>
             </div>
 

@@ -22,13 +22,7 @@ const TemplateTvPage = ({ tv, children }) => {
             />
           </div>
           <div className=" mTitle col-8">
-            <h1 className=" aName ">
-              {tv.name}
-              {"  "}
-              <a href={tv.homepage}>
-                <FontAwesomeIcon className="homeIcon" icon={["fas", "home"]} size="1x" />
-              </a>
-            </h1>
+            
             {children}
           </div>
         </div>

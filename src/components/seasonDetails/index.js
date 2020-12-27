@@ -5,39 +5,37 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default ({ season }) => {
   return (
     <>
-      <h1>{season.name}</h1>
-      <h4>Overview</h4>
-      <p>{season.overview}</p>
-      <ul className="list-group list-group-horizontal">
-        {/* <li key="ruh" className="list-group-item list-group-item-dark">
-          Runtime (min.)
-        </li>
-        <li key="rut" className="list-group-item ">
-          {season.runtime}
-        </li> */}
-      </ul>
+      <div className="backg">
 
-      <table>
-        <tr>
-          <th>Episode No.</th>
-          <th>Name</th>
-          <th>Overview</th>
-          <th>Air Date</th>
-          <th>Vote Avg.</th>
-        </tr>
-        {season.episodes.map(e => (
+        <h1>{season.name}</h1>
+        <h1 className="badge badge-dark">Overview</h1>
+        <p>{season.overview}</p>
+
+        <div className="row"><h4 className="badge badge-dark">Season Air Date</h4>
+          <p>{season.air_date}</p></div>
+
+
+        <table>
           <tr>
-            <td>{e.episode_number}</td>
-            <td>{e.name}</td>
-            <td>{e.overview}</td>
-            <td>{e.air_date}</td>
-            <td>{e.vote_average}</td>
+            <th>Episode No.</th>
+            <th>Name</th>
+            <th>Overview</th>
+            <th>Air Date</th>
+            <th>Vote Avg.</th>
           </tr>
-        ))}
-      </table>
+          {season.episodes.map(e => (
+            <tr>
+              <td>{e.episode_number}</td>
+              <td>{e.name}</td>
+              <td>{e.overview}</td>
+              <td>{e.air_date}</td>
+              <td>{e.vote_average}</td>
+            </tr>
+          ))}
+        </table>
 
 
-
+      </div>
     </>
   );
 };
