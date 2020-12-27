@@ -1,53 +1,53 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {  Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./siteHeader.css";
 
 const SiteHeader = () => {
   return (
+    <div className="siteHeader">
+      <Navbar collapseOnSelect variant="dark" expand="lg" fixed="top">
+        <FontAwesomeIcon
+          className="navbar-text text-white"
+          icon={["fas", "film"]}
+          size="3x"
+          to="/"
+        />
+        <Navbar.Brand className="text-white brand " href="/">MovList</Navbar.Brand>
 
-<Navbar collapseOnSelect variant="dark"expand="lg" fixed="top">
-    <FontAwesomeIcon
-        className="navbar-text text-dark"
-        icon={["fas", "film"]}
-        size="3x"
-        to ="/"
-      />
-  <Navbar.Brand className="text-dark brand " href="/">MovList</Navbar.Brand>
-  
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="ml-auto">
-      <Nav.Item><Link className="nav-link text-dark" to="/"> HOME</Link></Nav.Item>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Item><Link className="nav-link text-white" to="/"> HOME</Link></Nav.Item>
 
-      <NavDropdown className="text-dark" title="TRENDING" id="responsive-nav-dropdown">
-        <NavDropdown.Item><Link className="text-dark" to="/movies/trending"> MOVIES</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="text-dark" to="/tv/trending"> TV SHOWS</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="text-dark" to="/person/trending"> ACTORS</Link></NavDropdown.Item>
-      </NavDropdown>
+            <NavDropdown className="text-white" title="TRENDING" id="responsive-nav-dropdown">
+              <NavDropdown.Item><Link className="text-dark" to="/movies/trending"> MOVIES</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link className="text-dark" to="/tv/trending"> TV SHOWS</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link className="text-dark" to="/person/trending"> ACTORS</Link></NavDropdown.Item>
+            </NavDropdown>
 
-      <NavDropdown className="text-dark" title="FAVOURITES" id="responsive-nav-dropdown">
-        <NavDropdown.Item><Link className="text-dark" to="/movies/favorites"> MOVIES</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="text-dark" to="/tvs/favorites"> TV SHOWS</Link></NavDropdown.Item>
-      </NavDropdown>
+            <NavDropdown className="text-white" title="FAVOURITES" id="responsive-nav-dropdown">
+              <NavDropdown.Item><Link className="text-dark" to="/movies/favorites"> MOVIES</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link className="text-dark" to="/tvs/favorites"> TV SHOWS</Link></NavDropdown.Item>
+            </NavDropdown>
 
-      <NavDropdown className="text-dark" title="DISCOVER" id="responsive-nav-dropdown">
-        <NavDropdown.Item><Link className="text-dark" to="/"> MOVIES</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="text-dark" to="/movies/upcoming"> UPCOMING MOVIES</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="text-dark" to="/tv"> TV SHOWS</Link></NavDropdown.Item>
-      </NavDropdown>
+            <NavDropdown className="text-white" title="DISCOVER" id="responsive-nav-dropdown">
+              <NavDropdown.Item><Link className="text-dark" to="/"> MOVIES</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link className="text-dark" to="/movies/upcoming"> UPCOMING MOVIES</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link className="text-dark" to="/tv"> TV SHOWS</Link></NavDropdown.Item>
+            </NavDropdown>
 
-      <NavDropdown className="text-dark" title="FOLLOWING" id="responsive-nav-dropdown">
-        <NavDropdown.Item><Link className="text-dark" to="/persons/following"> ACTORS</Link></NavDropdown.Item>
-      </NavDropdown>
-      <Nav.Item><Link id = "login" className="nav-link text-dark" to="/login">REGISTER</Link></Nav.Item>
-    <Nav.Item ><Link className="nav-link text-dark" to="/account"> ACCOUNT</Link></Nav.Item>
-  </Nav>
-  </Navbar.Collapse>
-</Navbar>
-
+            <NavDropdown className="text-white" title="FOLLOWING" id="responsive-nav-dropdown">
+              <NavDropdown.Item><Link className="text-dark" to="/persons/following"> ACTORS</Link></NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Item><Link id="login" className="nav-link text-white" to="/login">REGISTER</Link></Nav.Item>
+            <Nav.Item ><Link className="nav-link text-white" to="/account"> ACCOUNT</Link></Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
     // <nav className="navbar  navbar-light fixed-top  bg-dark ">
     //   <nav className="navbar-brand text-white">
     //     <Link className=" text-white" to="/">
@@ -99,7 +99,7 @@ const SiteHeader = () => {
     //           Upcoming
     //         </Link>
     //       </li>
-          
+
     //       <li className="nav-item">
     //         <Link className="nav-link text-white" to="/movies/favorites">
     //           Favorites

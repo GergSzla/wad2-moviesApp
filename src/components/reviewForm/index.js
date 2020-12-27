@@ -16,6 +16,7 @@ const ReviewForm = ({ movie, history }) => {
   };
 
   return (
+    <div className ="backg">
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group widths='equal'>
         <Form.Field
@@ -56,6 +57,7 @@ const ReviewForm = ({ movie, history }) => {
       
       </Form.Group>
     </Form>
+    </div>
   );
 };
 
