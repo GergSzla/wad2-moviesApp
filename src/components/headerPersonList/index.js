@@ -3,11 +3,11 @@ import "./headerPersonList.css";
 
 const Header = ({ title, numPersons }) => {
     return (
-        <div className="row">
-            <div>
+        <div className="row pageTitleBackg">
+            <div className="col-md-6">
                 <h2 className="pageTitle">
                     {`${title} `}
-                    <span className="page">{numPersons}</span>
+                    <span className="badge badge-dark">{numPersons}</span>
                 </h2>
             </div>
         </div>

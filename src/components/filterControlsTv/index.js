@@ -12,6 +12,7 @@ const FilterControls = props => {
   };
 
   return (
+    <div className="searchBar">
     <div className="filter-controls row">
       <div className="col-md-12">
         <h4>
@@ -23,6 +24,7 @@ const FilterControls = props => {
           />
         </h4>
       </div>
+    </div>
     </div>
   );
 };

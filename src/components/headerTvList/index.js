@@ -3,12 +3,12 @@ import "./headerTvList.css";
 
 const Headerr = ({ title, numTvs }) => {
     return (
-        <div className="row">
-            <div>
-                <h2 className="pageTitle">
+        <div className="row pageTitleBackg">
+            <div className="col-md-6">
+                <h1 className="pageTitle">
                     {`${title} `}
-                    <span className="page">{numTvs}</span>
-                </h2>
+                    <span className="badge badge-dark">{numTvs}</span>
+                </h1>
             </div>
         </div>
     );

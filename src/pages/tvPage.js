@@ -9,7 +9,7 @@ const TvListPage = () => {
 
   return (
     <PageTemplate
-      title="No. TV Shows"
+      title="Discover TV Shows"
       tvs = {tvs}
       action={(tv) => {
         return <AddToFavoriteButtonTVS tv={tv} />;
