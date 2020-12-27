@@ -1,27 +1,51 @@
 import React from "react";
 import "./movieDetails.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default ({ movie,action }) => {
+export default ({ movie, action }) => {
   return (
     <>
-      <h4>Overview</h4>
+    <div className ="backg">
+      <h2>
+        {movie.title}
+        {"  "}
+        <a href={movie.homepage}>
+          <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
+        </a>
+      </h2>
+      <h1 className="badge badge-dark">Overview</h1>
       <p>{movie.overview}</p>
-      <ul className="list-group list-group-horizontal">
-        <li key="ruh" className="list-group-item list-group-item-dark">
-          Runtime (min.)
-        </li>
-        <li key="rut" className="list-group-item ">
-          {movie.runtime}
-        </li>
-        <li key="rdh" className="list-group-item list-group-item-dark">
-          Release Date
-        </li>
-        <li key="rdv" className="list-group-item ">
-          {movie.release_date}
-        </li>
-      </ul>
 
-      <ul className="list-group list-group-horizontal">
+      <div className="row"><h4 className="badge badge-dark">Runtime</h4>
+        <p>{movie.runtime} Minutes</p></div>
+
+      <div className="row"><h4 className="badge badge-dark">
+        Release Date
+        </h4>
+        <p>{movie.release_date}</p></div>
+
+        <div className="row"><h4 className="badge badge-dark">Genres</h4>
+      {movie.genres.map(g => (
+        <p>{g.name},&nbsp;</p>
+      ))}</div>
+      
+      <div className="row"><h4 className="badge badge-dark">Spoken Languages</h4>
+      {movie.spoken_languages.map(lang => (
+        <p>{lang.name},&nbsp;</p>
+      ))}</div>
+      
+      <div className="row"><h4 className="badge badge-dark">Production Companies</h4>
+      {movie.production_companies.map(pc => (
+        <p>{pc.name},&nbsp;</p>
+      ))}</div>
+      
+      <div className="row"><h4 className="badge badge-dark">Production Countries</h4>
+      {movie.production_countries.map(pc => (
+        <p>{pc.name},&nbsp;</p>
+      ))}</div>
+      
+
+      {/* <ul className="list-group list-group-horizontal">
         <li key="gh" className="list-group-item list-group-item-dark">
           Genres
         </li>
@@ -60,10 +84,10 @@ export default ({ movie,action }) => {
             {pc.name}
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       {action(movie)}
-
+      </div>
     </>
   );
 };

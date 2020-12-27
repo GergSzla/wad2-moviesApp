@@ -2,3 +2,24 @@
     padding: 2px;
     margin-top: 5px;
   }
+
+h1.badge{
+  font-size: 170%;
+}
+h4.badge{
+  font-size: 110%;
+}
+
+div.row p{
+  margin-left: 1%;
+  font-weight: bold;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.backg{
+  background-color: rgb(49, 49, 49);
+  padding: 2%;
+  margin-right: 4%;
+  border-radius: 4%;
+}
