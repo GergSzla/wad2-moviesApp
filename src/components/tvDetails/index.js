@@ -12,11 +12,10 @@ export default ({ tv, action }) => {
         <>
             <div className="backg">
                 <h2>
-                    {tv.name}
-                    {"  "}
+                    
                     <a href={tv.homepage}>
-                        <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
-                    </a>
+                    {tv.name}
+                    {"  "}                    </a>
                 </h2>
 
                 <h1 className="badge badge-dark">Overview</h1>

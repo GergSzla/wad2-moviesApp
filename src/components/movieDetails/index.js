@@ -10,7 +10,8 @@ export default ({ movie, action }) => {
           {movie.title}
           {"  "}
           <a href={movie.homepage}>
-            <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
+          {movie.title}
+          {"  "}
           </a>
         </h2>
         <h1 className="badge badge-dark">Overview</h1>

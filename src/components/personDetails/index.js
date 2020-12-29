@@ -8,10 +8,10 @@ export default ({ person }) => {
     <>
       <div className="backg">
         <h2>
+          
+          <a href={person.homepage}>
           {person.name}
           {"  "}
-          <a href={person.homepage}>
-            <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
           </a>
         </h2>
         <div className="row"><h4 className="badge badge-dark">Also Known As</h4>
