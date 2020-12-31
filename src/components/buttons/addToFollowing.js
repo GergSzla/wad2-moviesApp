@@ -11,6 +11,7 @@ const AddToFollowingButton = ({ person }) => {
     };
     return (
       <button
+      id="btn-follow"
         type="button"
         className="btn w-100 btn-primary"
         onClick={handleAddToFollowing}

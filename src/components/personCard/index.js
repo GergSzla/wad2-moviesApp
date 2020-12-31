@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./personCard.css";
 import "../../globals/fontawesome";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PersonCard = ({ person, action }) => {
 

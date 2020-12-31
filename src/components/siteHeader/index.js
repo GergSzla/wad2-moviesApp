@@ -22,10 +22,10 @@ const SiteHeader = () => {
           <Nav className="ml-auto">
             <Nav.Item><Link id="home_nav" className="nav-link text-white" to="/"> HOME</Link></Nav.Item>
 
-            <NavDropdown className="text-white" title="TRENDING" id="responsive-nav-dropdown">
+            <NavDropdown className="text-white trending_dropdown" title="TRENDING" id="responsive-nav-dropdown">
               <NavDropdown.Item><Link className="text-dark" to="/movies/trending"> MOVIES</Link></NavDropdown.Item>
               <NavDropdown.Item><Link className="text-dark" to="/tv/trending"> TV SHOWS</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link className="text-dark" to="/person/trending"> ACTORS</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link id="trending_actors" className="text-dark" to="/person/trending"> ACTORS</Link></NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown className="text-white favs_dropdown" title="FAVOURITES" id="responsive-nav-dropdown">
@@ -39,8 +39,8 @@ const SiteHeader = () => {
               <NavDropdown.Item><Link id="disc-tvs_nav" className="text-dark" to="/tv"> TV SHOWS</Link></NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown className="text-white" title="FOLLOWING" id="responsive-nav-dropdown">
-              <NavDropdown.Item><Link className="text-dark" to="/persons/following"> ACTORS</Link></NavDropdown.Item>
+            <NavDropdown className="text-white following_dropdown" title="FOLLOWING" id="responsive-nav-dropdown">
+              <NavDropdown.Item><Link id="following-actors" className="text-dark" to="/persons/following"> ACTORS</Link></NavDropdown.Item>
             </NavDropdown>
             <Nav.Item><Link id="login" className="nav-link text-white" to="/login">REGISTER</Link></Nav.Item>
             <Nav.Item ><Link id="acc_nav" className="nav-link text-white" to="/account"> ACCOUNT</Link></Nav.Item>
