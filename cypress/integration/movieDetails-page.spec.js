@@ -1,6 +1,5 @@
 let movieId = null
 let movie;
-let reviews;
 
 /* eslint-disable */
 describe("Movie Details Page", () => {
@@ -65,5 +64,16 @@ describe("Movie Details Page", () => {
     
     cy.get(".row").find("h4").contains("Vote Count")
     cy.get(".row").contains(movie.vote_count);
+  });
+
+  it("Should Display Poster", () => {
+    cy.get("div")
+      .find('img')
+      .should("have.attr", "src")
+      .should("include", movie.poster_path);
+  });
+
+  it("Should Show Reviews", () => {
+    cy.get("#btn_revs").click()
   });
 })

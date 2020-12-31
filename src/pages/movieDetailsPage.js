@@ -21,7 +21,7 @@ const MoviePage = props => {
           <div className="row">
             <div className="col-12 ">
               {!props.history.location.pathname.endsWith("/reviews") ? (
-                <Link
+                <Link id="btn_revs"
                   className="btn btn-primary btn-block active"
                   to={`/movies/${id}/reviews`}
                 >
