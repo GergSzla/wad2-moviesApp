@@ -10,7 +10,7 @@ const FavoriteTvsPage = props => {
   return (
     <TvsListPageTemplate
       tvs={favorites}
-      title={"Favorite Tvs"}
+      title={"Favorite TV Shows"}
       action={tv => <AddReviewButton tv={tv} />}
     />
   );

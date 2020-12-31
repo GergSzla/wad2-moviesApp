@@ -30,7 +30,7 @@ const SiteHeader = () => {
 
             <NavDropdown className="text-white favs_dropdown" title="FAVOURITES" id="responsive-nav-dropdown">
               <NavDropdown.Item><Link id="fav_movies" className="text-dark" to="/movies/favorites"> MOVIES</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link className="text-dark" to="/tvs/favorites"> TV SHOWS</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link id="fav_tvs" className="text-dark" to="/tvs/favorites"> TV SHOWS</Link></NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown className="text-white disc_dropdown" title="DISCOVER" id="responsive-nav-dropdown">
