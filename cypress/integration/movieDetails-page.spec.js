@@ -3,7 +3,6 @@ let movie;
 let reviews;
 
 /* eslint-disable */
-
 describe("Movie Details Page", () => {
   before(() => {
     cy.request(
@@ -29,70 +28,42 @@ describe("Movie Details Page", () => {
         movie = movieDetails;
         return movieDetails.id;
       })
-
-      //before anything log in a user
-      cy.login()
-  });
-  
-  //before each visit hompage
-  //click on first card img
-  beforeEach(() => {
-    cy.visit(`/`);
+    cy.login()
+    cy.wait(500)
     cy.get(".card").eq(2).find("img").click();
   });
 
-  //check if h2 header contains title of current movie
-  it("should display movie title in the page header", () => {
-    cy.get("h1").contains(movie.title);
+
+  it("Should Display Movie Name", () => {
+    cy.get("h2").contains(movie.title);
   });
 
-  //check if movie details are displayed
-  it("should display the movie's details", () => {
-    cy.get("h3").contains("Overview");
-    cy.get("h3").next().contains(movie.overview);
-    cy.get("ul").eq(0).within(() => {
-        cy.get("h5").eq(0).contains("Tagline");
-        cy.get("li").eq(1).contains(movie.tagline);
-      });
-      cy.get("ul").eq(1).within(() => {
-        cy.get("li").eq(0).contains("Popularity");
-        cy.get("li").eq(1).contains(movie.popularity);
-      });
+  it("Should Display Movie Details", () => {
+    cy.get("h1").contains("Overview");
+    cy.get("p").contains(movie.overview);
 
-      cy.get("ul").eq(2).within(() => {
-        cy.get("li").eq(0).contains("Movie Budget");
-        cy.get("li").eq(1).contains(movie.budget);
-      });
+    cy.get(".row").find("h4").contains("Tagline")
+    cy.get(".row").contains(movie.tagline);
 
-      cy.get("ul").eq(3).within(() => {
-        cy.get("li").eq(0).contains("Movie Revenue");
-        cy.get("li").eq(1).contains(movie.revenue);
-      });
+    cy.get(".row").find("h4").contains("Popularity")
+    cy.get(".row").contains(movie.popularity);
 
-      cy.get("ul").eq(4).within(() => {
-        cy.get("li").eq(0).contains("Release Date");
-        cy.get("li").eq(1).contains(movie.release_date);
-      });
+    cy.get(".row").find("h4").contains("Budget")
+    cy.get(".row").contains(movie.budget);
 
+    cy.get(".row").find("h4").contains("Runtime")
+    cy.get(".row").contains(movie.runtime);
+
+    cy.get(".row").find("h4").contains("Release Date")
+    cy.get(".row").contains(movie.release_date);
+
+    cy.get(".row").find("h4").contains("Status")
+    cy.get(".row").contains(movie.status);
+
+    cy.get(".row").find("h4").contains("Vote Average")
+    cy.get(".row").contains(movie.vote_average);
+    
+    cy.get(".row").find("h4").contains("Vote Count")
+    cy.get(".row").contains(movie.vote_count);
   });
-
-  it("should display the Home icon with the correct URL value", () => {
-    cy.get(".fa-home")
-      .parent()
-      .should("have.attr", "href")
-      .should("include", movie.homepage);
-  });
-
-  //check is poster is displayed on movie details page
-  it("should display movie poster", () => {
-    //get div, find img
-    //should contain src that is poster path of current movie
-    cy.get("div")
-      .find('img')
-      .should("have.attr", "src")
-      .should("include", movie.poster_path);
-  });
-
-
-
 })

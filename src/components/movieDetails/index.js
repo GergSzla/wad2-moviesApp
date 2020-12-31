@@ -6,8 +6,6 @@ export default ({ movie, action }) => {
     <>
       <div className="backg">
         <h2>
-          {movie.title}
-          {"  "}
           <a href={movie.homepage}>
           {movie.title}
           {"  "}
@@ -34,10 +32,6 @@ export default ({ movie, action }) => {
           <div className="row"><h4 className="badge badge-dark">
           Budget</h4>
           <p>{movie.budget}</p></div>
-
-          <div className="row"><h4 className="badge badge-dark">
-          Status</h4>
-          <p>{movie.status}</p></div>
 
           <div className="row"><h4 className="badge badge-dark">
           Popularity</h4>

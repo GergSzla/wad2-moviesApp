@@ -126,12 +126,10 @@ describe("Home Page", () => {
 
     describe("Movies In Favs", () => {
       it("Should Show Movies In Favs", () => {
-
         cy.get("nav").find(".favs_dropdown").click();
         cy.get("nav").find("#fav_movies").click();
         cy.get("h1").contains("Favorite Movies");
         const selectedGenreId = 35;
-
         const matchingMovies = filterByGenre(movies, selectedGenreId);
         cy.get(".card").should("have.length", matchingMovies.length);
         cy.get(".card").each(($card, index) => {
