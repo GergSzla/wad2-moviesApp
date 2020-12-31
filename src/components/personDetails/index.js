@@ -17,7 +17,7 @@ export default ({ person }) => {
         <p>{person.also_known_as},&nbsp; </p></div>
 
         <h1 className="badge badge-dark">Biography</h1>
-        <p>{person.biography}</p>
+        <p id="biog">{person.biography}</p>
 
         <div className="row"><h4 className="badge badge-dark">Birthday</h4>
         <p>{person.birthday}</p></div>
