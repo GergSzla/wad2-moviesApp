@@ -2,6 +2,8 @@ let movies;
 const movieId = 497582; // Enola Holmes movie id
 let reviews;
 
+/* eslint-disable */
+
 describe("Navigation", () => {
   before(() => {
     cy.request(

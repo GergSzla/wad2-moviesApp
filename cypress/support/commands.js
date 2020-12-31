@@ -1,25 +1,43 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+import '@percy/cypress';
+
+ /* eslint-disable */
+
+ const regEmail = "test1@gmail.com"
+ const regPW = "test123"
+
+Cypress.Commands.add('register', () => {
+    cy.visit("/")
+    cy.get("nav").find("div").eq(7).find("a").click();        
+    cy.get('#reg_email').type(regEmail)
+    cy.get('#reg-password').type(regPW)
+    cy.get('#password-confirm').type(regPW)
+    cy.get('.btnReg').click()
+})
+
+Cypress.Commands.add('incorrect_pass_register', () => {
+    cy.visit("/")
+    cy.get("nav").find("div").eq(7).find("a").click();        
+    cy.get('#reg_email').type(regEmail)
+    cy.get('#reg-password').type(regPW)
+    cy.get('#password-confirm').type(regPW+"4")
+    cy.get('.btnReg').click()
+})
+
+Cypress.Commands.add('logout', () => {
+    cy.get("nav").find("#acc_nav").click();        
+    cy.get('.btn-logout').click()
+})
+
+Cypress.Commands.add('incorrect_login', () => {
+    cy.visit("/")
+    cy.get('#email').type(regEmail)
+    cy.get('#password').type("fsafafsa")
+    cy.get('.btnLogin').click()
+})
+
+Cypress.Commands.add('login', () => {
+    cy.visit("/")
+    cy.get('#email').type(regEmail)
+    cy.get('#password').type(regPW)
+    cy.get('.btnLogin').click()
+})

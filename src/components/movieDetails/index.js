@@ -1,6 +1,5 @@
 import React from "react";
 import "./movieDetails.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default ({ movie, action }) => {
   return (

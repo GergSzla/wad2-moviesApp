@@ -1,6 +1,5 @@
 import React from "react";
 import "./seasonDetails.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default ({ season }) => {
   return (

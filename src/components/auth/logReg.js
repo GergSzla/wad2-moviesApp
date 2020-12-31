@@ -52,7 +52,7 @@ const LogReg = () => {
             signUp(emailRef.current.value, passwordRef.current.value)
             history.push("/")
         } catch {
-            setRegError("Registration Failed")
+            return setRegError("Registration Failed")
         }
 
         setLoading(false)
@@ -67,8 +67,8 @@ const LogReg = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg">
-                                <h1 className="text-center"> Login</h1>
-                                {errorLogin && <Alert variant="danger">{errorLogin} </Alert>}
+                                <h1 className="text-center login_header"> Login</h1>
+                                {errorLogin && <Alert variant="danger" className="err_login">{errorLogin} </Alert>}
                                 <Form onSubmit={handleLogin}>
                                     <Form.Group className="text-left" id="email">
                                         <Form.Label>Email</Form.Label>
@@ -86,14 +86,14 @@ const LogReg = () => {
                             </div>
                             {/* Sign Up */}
                             <div className="col-lg">
-                                <h1 className="text-center">Register</h1>
-                                {errorReg && <Alert variant="danger">{errorReg}</Alert>}
+                                <h1 className="text-center reg_header">Register</h1>
+                                {errorReg && <Alert variant="danger" className="err_reg">{errorReg}</Alert>}
                                 <Form onSubmit={handleReg}>
-                                    <Form.Group className="text-left" id="email">
-                                        <Form.Label>Email</Form.Label>
-                                        <Form.Control type="email" ref={emailRef} required />
+                                    <Form.Group className="text-left" id="reg_email">
+                                        <Form.Label >Email</Form.Label>
+                                        <Form.Control type="email"  ref={emailRef} required />
                                     </Form.Group>
-                                    <Form.Group className="text-left" id="password">
+                                    <Form.Group className="text-left" id="reg-password">
                                         <Form.Label>Password</Form.Label>
                                         <Form.Control type="password" ref={passwordRef} required />
                                     </Form.Group>
@@ -101,7 +101,7 @@ const LogReg = () => {
                                         <Form.Label>Confirm Password</Form.Label>
                                         <Form.Control type="password" ref={passwordConfirmRef} required />
                                     </Form.Group>
-                                    <Button disabled={loading} className="btnLogin" type="submit"  >
+                                    <Button disabled={loading} className="btnReg" type="submit"  >
                                         Register
                                 </Button>
                                 </Form>

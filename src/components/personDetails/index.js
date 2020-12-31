@@ -1,6 +1,5 @@
 import React from "react";
 import "./personDetails.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 export default ({ person }) => {

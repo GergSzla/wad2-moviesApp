@@ -6,7 +6,7 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getPerson = () => {
+  export const getPerson = () => { //new
     return fetch(
       `https://api.themoviedb.org/3/trending/person/day?api_key=${process.env.REACT_APP_TMDB_KEY}`
     )
@@ -14,7 +14,7 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getTvs = () => {
+  export const getTvs = () => { //new
     return fetch(
       `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false`
        )
@@ -28,7 +28,7 @@ export const getMovies = () => {
     ).then(res => res.json());
   };
 
-  export const getReqPerson = id => {
+  export const getReqPerson = id => { //new
     return fetch(
       `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
     ).then(res => res.json());
@@ -44,7 +44,7 @@ export const getMovies = () => {
       .then(json => json.genres);
   };
 
-  export const getTv = id => {
+  export const getTv = id => { //new
     return fetch(
       ` https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
        )
@@ -59,7 +59,7 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getTvReviews = id => {
+  export const getTvReviews = id => { //new
     return fetch(
       `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
     )
@@ -75,7 +75,7 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getTrendingMovies = () => {
+  export const getTrendingMovies = () => { //new
     return fetch(
       `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_TMDB_KEY}`
        )
@@ -83,7 +83,7 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getTrendingTvs = () => {
+  export const getTrendingTvs = () => { //new
     return fetch(
       `https://api.themoviedb.org/3/trending/tv/day?api_key=${process.env.REACT_APP_TMDB_KEY}`
        )
@@ -91,7 +91,7 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getSeason = (tv_id,season_number) => {
+  export const getSeason = (tv_id,season_number) => { //new
     return fetch(
       `https://api.themoviedb.org/3/tv/${tv_id}/season/${season_number}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
        )

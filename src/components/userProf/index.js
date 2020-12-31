@@ -32,7 +32,7 @@ export const UserProf = () => {
                 </Card.Body>
                 <div className="w-100 text-center mt-3">
                     {error && <Alert variant="danger">{error} </Alert>}
-                    <Button onClick={handleLogout} type="submit"> Sign Out</Button>
+                    <Button onClick={handleLogout} type="submit" className="btn-logout"> Sign Out</Button>
                 </div>
             </Card>
 
