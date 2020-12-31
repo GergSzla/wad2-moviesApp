@@ -29,7 +29,7 @@ export default ({ movie }) => {
                 <td>{excerpt(r.content)}</td>
                 <td>
                   {" "}
-                  <Link
+                  <Link className="rev_link"
                     to={{
                       pathname: `/movies/reviews/${r.id}`,
                       state: {
