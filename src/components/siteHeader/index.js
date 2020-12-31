@@ -20,7 +20,7 @@ const SiteHeader = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Item><Link className="nav-link text-white" to="/"> HOME</Link></Nav.Item>
+            <Nav.Item><Link id="home_nav" className="nav-link text-white" to="/"> HOME</Link></Nav.Item>
 
             <NavDropdown className="text-white" title="TRENDING" id="responsive-nav-dropdown">
               <NavDropdown.Item><Link className="text-dark" to="/movies/trending"> MOVIES</Link></NavDropdown.Item>

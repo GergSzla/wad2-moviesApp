@@ -19,15 +19,21 @@ const filterByGenre = (movieList, genreId) =>
           .then((response) => {
             movies = response.results
           })
-      })
+          cy.visit("/");
 
-    beforeEach(() => {
-      cy.visit("/");
-    });
+      })
   
+    describe("Navigate to Home", () => {
+      it("Should Show Home Page", () => {
+        cy.get("nav").find("#home_nav").click();        
+        cy.get("h1").contains("Discover Movies");
+        cy.get(".badge").contains(20);
+      });
+    })
+
     describe("Base test", () => {
       it("displays page header", () => {
-        cy.get("h2").contains("Movies");
+        cy.get("h1").contains("Discover Movies");
         cy.get(".badge").contains(20);
       });
     })
@@ -70,6 +76,7 @@ const filterByGenre = (movieList, genreId) =>
           const selectedGenreId = 35;
           const selectedGenreText = "Comedy";
           const searchString = "o";
+          cy.get("input").clear()
           const matchingMovies = filterByGenre(movies, selectedGenreId, searchString);
           cy.get("select").select(selectedGenreText); 
           cy.get(".card").should("have.length", matchingMovies.length);
@@ -85,6 +92,7 @@ const filterByGenre = (movieList, genreId) =>
       it("should display movies with the specified genre and title", () => {
         const selectedGenreId = 35;
         const selectedGenreText = "Comedy";
+        cy.get("input").clear()
         const matchingMovies = filterByGenre(movies, selectedGenreId);
         cy.get("select").select(selectedGenreText); 
         cy.get(".card").should("have.length", matchingMovies.length);
