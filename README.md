@@ -3,6 +3,8 @@
 BSc (Hons) Software Systems Development,
 Gergo Szilagyi,
 20079738
+
+# Web App
 ## Features
 -	Discover Movies Page
 -	Discover TV Shows Page
@@ -127,6 +129,75 @@ Gergo Szilagyi,
 ### Write Review
 ![](https://res.cloudinary.com/dkdptqakb/image/upload/v1609101788/WAD%201/Screenshot_2020-12-27_React_App22.png)
 >Reviews can be written using the form provided.
+
+# Testing
+## Cypress Testing (E2E)
+### Automated UI Tests
+- cypress/
+  - integration/..
+    - account.spec.js `(test for account page)`
+    - discTVShows.spec.js `(test for discover shows page)`
+    - discUpcomingMovs.spec.js `(test for discover movies page)`
+    - favTVShows.spec.js `(test for favorite shows page)`
+    - followingPersons.spec.js `(test for followed actors page)`
+    - home-page.spec.js `(test for home (discover movies) page)`
+    - logreg-spec.js `(test for login/register page)`
+    - movieDetails-page.spec.js `(test for movie details page)`
+    - personsDetails.spec.js `(test for actor details page)`
+    - tvShowDetails.spec.js `(test for show details page)`
+    - trendingMovies.spec.js `(test for trending movies page)`
+    - trendingPersons.spec.js `(test for trending actors page)`
+    - trendingTVShows.spec.js `(test for trending shows page)`
+    - viewReview.js `(test for viewing reviews 
+
+### Custom Commands
+- cypress/
+    - support/
+       - commands.js/...
+            - register() `Registers Test User`
+            - incorrect_pass_register() `tests registration errors`
+            - logout() `Logout Test User`
+            - incorrect_login() `Test Login Errors`
+            - login() `Login Test User`
+
+### [Cypress Dashboard](https://dashboard.cypress.io/projects/cjwgj1/runs?branches=%5B%5D&committers=%5B%5D&flaky=%5B%5D&page=1&status=%5B%5D&tags=%5B%5D&timeRange=%7B%22startDate%22%3A%221970-01-01%22%2C%22endDate%22%3A%222038-01-19%22%7D "Cypress Dashboard")
+![](https://res.cloudinary.com/dkdptqakb/image/upload/v1609525434/WAD%201/Capture.png)
+>As shown in the screenshot above, the part marked in red, the test failed because the app was running the tests in the wrong order. After making changes to `cypress.json`, the test passed. The updated cypress.json is shown below. 
+```json
+{
+    "baseUrl": "http://localhost:3000/",
+    "projectId": "cjwgj1",
+    "testFiles": [
+        "logreg-spec.js",
+        "account.spec.js",
+        "discTVShows.spec.js",
+        "discUpcomingMovs.spec.js",
+        "favTVShows.spec.js",
+        "followingPersons.spec.js",
+        "home-page.spec.js",
+        "movieDetails-page.spec.js",
+        "personDetails.spec.js",
+        "tvShowDetails.spec.js",
+        "trendingMovies.spec.js",
+        "trendingPersons.spec.js",
+        "trendingTVShows.spec.js",
+        "viewReview.spec.js"
+      ]
+}
+```
+
+
+![](https://res.cloudinary.com/dkdptqakb/image/upload/v1609525369/WAD%201/Screenshot_2021-01-01_wad2-moviesApp1.png)![](https://res.cloudinary.com/dkdptqakb/image/upload/v1609525369/WAD%201/Screenshot_2021-01-01_wad2-moviesApp.png)
+>The successful test is shown above in the two additional screenshots.
+
+## Gitlab
+Gitlab repo link can be found in the section below.
+
+## Links
+- [Github](https://github.com/GergSzla/wad2-moviesApp)
+- [GitLab](https://gitlab.com/GergSzla/moviesapp-ci)
+- [Cypress Dashboard](https://dashboard.cypress.io/projects/cjwgj1/runs?branches=%5B%5D&committers=%5B%5D&flaky=%5B%5D&page=1&status=%5B%5D&tags=%5B%5D&timeRange=%7B%22startDate%22%3A%221970-01-01%22%2C%22endDate%22%3A%222038-01-19%22%7D)
+- [YouTube](https://youtu.be/slmw-jArWeM)
 
 ## References
 ### Firebase
