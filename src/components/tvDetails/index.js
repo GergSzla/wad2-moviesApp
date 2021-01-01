@@ -6,7 +6,7 @@ import "./tvDetails.css";
 
 
 export default ({ tv, action }) => {
-    const [open, setOpen] = React.useState(false)
+    // const [open, setOpen] = React.useState(false)
 
     return (
         <>

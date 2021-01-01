@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../contexts/authenticationContext'
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import "./prof.css";
 
 

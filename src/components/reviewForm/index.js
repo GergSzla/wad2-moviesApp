@@ -3,11 +3,11 @@ import "./reviewForm.css";
 import useForm from "react-hook-form";
 import { MoviesContext } from '../../contexts/moviesContext'
 import { withRouter } from "react-router-dom";
-import { Form, Input, TextArea, Button, Select } from 'semantic-ui-react'
+import { Form, Input, TextArea, Button/*, Select*/ } from 'semantic-ui-react'
 
 
 const ReviewForm = ({ movie, history }) => {
-  const { register, handleSubmit, errors, reset } = useForm();
+  const { /*register,*/ handleSubmit/*, errors, reset*/ } = useForm();
   const context = useContext(MoviesContext);
 
   const onSubmit = data => {

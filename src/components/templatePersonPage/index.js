@@ -1,7 +1,6 @@
 import React from "react";
 import PersonHeader from '../headerPerson'
 import "./personPage.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const TemplatePersonPage = ({ person, children }) => {

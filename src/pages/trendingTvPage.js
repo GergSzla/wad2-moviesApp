@@ -1,6 +1,6 @@
 import { getTrendingTvs } from "../api/tmdb-api";
 import React, { useState, useEffect } from "react";
-import StubAPI from "../api/stubAPI";
+// import StubAPI from "../api/stubAPI";
 import PageTemplate from '../components/templateTvListPage'
 import AddToFavoriteButtonTVS from '../components/buttons/addToFavoritesTV'
 

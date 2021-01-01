@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../contexts/authenticationContext'
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import "./auth.css";
 
 
@@ -16,7 +16,6 @@ const LogReg = () => {
     const { signUp } = useAuth()
     const [errorLogin, setLoginError] = useState("")
     const [errorReg, setRegError] = useState("")
-    const [successReg, setRegSuccess] = useState("")
     const [loading, setLoading] = useState(false)
     const history = useHistory();
     const { setLoggedIn } = useAuth();

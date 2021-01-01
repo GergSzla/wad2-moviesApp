@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import PersonListPageTemplate from "../components/templatePersonListPage/viewPerson";
 import {PersonsContext} from '../contexts/personContext'
-import AddReviewButton from '../components/buttons/addReview'
+// import AddReviewButton from '../components/buttons/addReview'
 
 
 const FollowingPersonsPage = props => {

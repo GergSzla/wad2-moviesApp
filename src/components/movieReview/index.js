@@ -1,5 +1,5 @@
 import React from "react";
-import { Button,Image, Modal, ModalDescription } from 'semantic-ui-react'
+import { Button, Modal, ModalDescription } from 'semantic-ui-react'
 
 export default ({ review }) => {
   const [open, setOpen] = React.useState(false)

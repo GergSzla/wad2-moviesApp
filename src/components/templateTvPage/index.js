@@ -1,7 +1,6 @@
 import React from "react";
 import TvHeader from '../headerTv'
 import "./tvPage.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const TemplateTvPage = ({ tv, children }) => {
