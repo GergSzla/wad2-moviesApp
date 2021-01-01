@@ -1,3 +1,20 @@
 {
-    "baseUrl": "http://localhost:3000/"
+    "baseUrl": "http://localhost:3000/",
+    "projectId": "cjwgj1",
+    "testFiles": [
+        "logreg-spec.js",
+        "account.spec.js",
+        "discTVShows.spec.js",
+        "discUpcomingMovs.spec.js",
+        "favTVShows.spec.js",
+        "followingPersons.spec.js",
+        "home-page.spec.js",
+        "movieDetails-page.spec.js",
+        "personDetails.spec.js",
+        "tvShowDetails.spec.js",
+        "trendingMovies.spec.js",
+        "trendingPersons.spec.js",
+        "trendingTVShows.spec.js",
+        "viewReview.spec.js"
+      ]
 }

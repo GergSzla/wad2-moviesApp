@@ -12,7 +12,7 @@ describe("TV Show Details Page", () => {
         )
             .its("body")
             .then((response) => {
-                return response.results[3].id;
+                return response.results[4].id;
             })
             .then((arbitraryTvIdignored) => {
                 tvId = arbitraryTvIdignored
@@ -33,7 +33,7 @@ describe("TV Show Details Page", () => {
         cy.get("nav").find(".trending_dropdown").click();
         cy.get("nav").find("#trending_tvs").click();
         cy.wait(2000)
-        cy.get(".card").eq(3).find("img").click();
+        cy.get(".card").eq(4).find("img").click();
     });
 
 

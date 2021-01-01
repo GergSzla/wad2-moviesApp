@@ -29,12 +29,6 @@ describe("Register", () => {
         });
     })
 
-    describe("Logout", () => {
-        it("Should Logout", () => {
-            cy.logout()
-        });
-    })
-
     describe("Login", () => {
         it("Should Return Error", () => {
             cy.incorrect_login()
@@ -47,6 +41,12 @@ describe("Register", () => {
 
         it("Should Redirect To Discover Movies (Home)", () => {
             cy.get(".pageTitle").contains("Discover Movies");
+        });
+    })
+
+    describe("Logout", () => {
+        it("Should Logout", () => {
+            cy.logout()
         });
     })
 })

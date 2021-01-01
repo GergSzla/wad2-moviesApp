@@ -69,7 +69,6 @@ describe("Discover TV Shows Page", () => {
                     .find("#btn-fav-tv")
                     .click();
             });
-            cy.get(".badge").contains(4);
         });
     });
 

@@ -23,8 +23,10 @@ describe("Discover TV Shows Page", () => {
 
     describe("Navigate to Discover TV Shows", () => {
         it("Should Show TV Shows", () => {
+            cy.wait(2000)
             cy.get("nav").find(".disc_dropdown").click();
             cy.get("nav").find("#disc-tvs_nav").click();
+            cy.wait(2000)
             cy.get("h1").contains("Discover TV Shows");
             cy.get(".badge").contains(20);
         });
